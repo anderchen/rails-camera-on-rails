@@ -1,4 +1,4 @@
-class Equipment < ApplicationRecord
+class Device < ApplicationRecord
   belongs_to :user
 
   validates :name, presence: true
