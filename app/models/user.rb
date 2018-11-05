@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :equipments
+
+  validates :name, presence: true
+  validates :location, presence: true
+  validates :photo, presence: true
 end
