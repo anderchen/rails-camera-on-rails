@@ -1,3 +1,7 @@
+.yellow {
+  color: #fac85a;
+}
+
 .footer-distributed{
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -5,7 +9,6 @@
   width: 100%;
   text-align: left;
   font: normal 16px sans-serif;
-
   padding: 45px 50px;
   margin-top: 80px;
 }
@@ -28,7 +31,7 @@
   display:inline-block;
   line-height: 1.8;
   text-decoration: none;
-  color:  inherit;
+  color:  #fac85a;
 }
 
 .footer-distributed .footer-right{
@@ -45,7 +48,7 @@
   border-radius: 2px;
 
   font-size: 20px;
-  color: #ffffff;
+  color: #fac85a;
   text-align: center;
   line-height: 35px;
 
