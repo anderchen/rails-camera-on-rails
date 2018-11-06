@@ -13,7 +13,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.cost = @device.price
+    start_date = @booking.start_date.to_date
+    end_date = @booking.end_date.to_date
+    @booking.cost = (end_date - start_date).to_i * @device.price
     @booking.device = @device
     if @booking.save
       redirect_to device_bookings_path
