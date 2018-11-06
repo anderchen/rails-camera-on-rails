@@ -1,6 +1,6 @@
 class Device < ApplicationRecord
   belongs_to :user
-  has_many :bookings, dependent: :restrict
+  has_many :bookings, dependent: :restrict_with_error
 
   validates :name, presence: true
   validates :description, presence: true
