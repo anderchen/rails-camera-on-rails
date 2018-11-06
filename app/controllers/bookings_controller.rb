@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_user, only: [:new, :create]
+  before_action :set_device, only: [:new, :create]
 
   def index
     @bookings = Booking.all
@@ -31,6 +32,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :cost)
+    params.require(:booking).permit(:user_id, :device_id, :start_date, :end_date, :cost)
   end
 end
