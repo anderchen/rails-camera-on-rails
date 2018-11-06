@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Device.create!(
+  name: 'Sony A6300 Mirrorless',
+  description: 'Mirrorless Camera',
+  brand: 'Sony',
+  model: 'A6300',
+  category: 'Cameras',
+  price: 15.00,
+  is_rented: false,
+  user_id: 1
+  )
