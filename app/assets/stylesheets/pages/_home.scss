@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 body {
-  height: 100vh;
+  height: 80vh;
   background-image:url("https://images.pexels.com/photos/134469/pexels-photo-134469.jpeg?cs=srgb&dl=camera-contemporary-flash-134469.jpg&fm=jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -12,10 +12,44 @@ body {
   opacity: 0.9;
   padding: 40px 60px;
   border-radius: 30px;
-  width: 500px;
+  width: 550px;
+  box-shadow: 0px 0px 159px 26px rgba(148,148,148,0.92);
 
 }
 
 h1 {
   color: #CC0000 !important;
+  font-size: 35px !important;
+  font-family: 'Roboto' !important;
+  font-style: bold !important;
 }
+
+hr {
+    border: 0 !important;
+    height: 1px !important;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)) !important;
+    border-color: #CC0000 !important;
+}
+
+.arrow {
+  text-align: center;
+  margin: 3% 0;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
