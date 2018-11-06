@@ -12,10 +12,11 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_user.id
+    @booking.user = current_user
+    @booking.cost = @device.price
     @booking.device = @device
     if @booking.save
-      redirect_to bookings_path
+      redirect_to device_bookings_path
     else
       render :new
     end

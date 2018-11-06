@@ -14,6 +14,7 @@ class DevicesController < ApplicationController
 
   def create
     @device = Device.new(device_params)
+    @device.user_id = current_user.id
     if @device.save
       redirect_to device_path(@device)
     else
@@ -40,7 +41,7 @@ class DevicesController < ApplicationController
   private
 
   def set_device
-    @device = Device.find(params[:device_id])
+    @device = Device.find(params[:id])
   end
 
   def device_params
