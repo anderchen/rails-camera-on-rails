@@ -9,7 +9,7 @@
     <%= f.input :description %>
     <%= f.input :brand %>
     <%= f.input :model %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: %w(Cameras Lens Tripods Drones Filters Lighting Accessories Other) %>
     <%= f.input :price %>
   </div>
 
