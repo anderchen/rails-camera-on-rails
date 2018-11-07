@@ -5,7 +5,7 @@
   <%= f.error_notification %>
 <div class="container">
   <div class="row text-center justify-content-center">
-    <div class="col-lg-6 " style="background-color: white; border-radius: 25px; padding: 20px;">
+    <div class="col-lg-6 " style="background-color: white; border-radius: 25px; padding: 20px; opacity: 0.8px; box-shadow: 0px 0px 97px -10px rgba(171,171,171,0.67)">
       <div class="form-inputs">
     <%= f.input :email,
                 required: true,
@@ -30,7 +30,7 @@
     <p style="margin-top: 30px;">Already have an account? <%= render "devise/shared/links" %></p>
   </div>
 <% end %>
-    </div>
+  </div>
   </div>
 </div>
 
