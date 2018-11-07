@@ -1,2 +1,32 @@
-<h1>Devices#show</h1>
-<p>Find me in app/views/devices/show.html.erb</p>
+
+  <div class="container text-center padded">
+      <div class="grid-product-info">
+        <div class="card photo-section" style="background-image: url(https://images.unsplash.com/photo-1534961165765-5c9795af911b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=03dae832f565685a0d3a7f9b57554112&auto=format&fit=crop&w=351&q=80); background-size: cover;">
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <h2><%= @device.name %></h2>
+            <br>
+            <p><%= @device.description %></p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-content">
+            <ul>
+              <li>Brand: <%= @device.brand %></li>
+              <li>Model: <%= @device.model %></li>
+              <li>Category: <%= @device.category %></li>
+              <li>Price per Day: <%= @device.price %></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card product-info-section">
+          <div class="card-content">
+
+            <p class="text-justify">
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
