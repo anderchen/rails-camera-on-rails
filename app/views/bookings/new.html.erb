@@ -1,13 +1,37 @@
-<h1>Bookings new page</h1>
-<%= simple_form_for [@device, @booking] do |f| %>
-  <%= f.error_notification %>
+<div class="container text-center padded">
+  <div class="grid">
+    <div class="card main-section" style="background-image: url(https://images.unsplash.com/photo-1517956050595-8932d6d6b740?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6a9bbe4bf7b3f455de4e2389344d97da&auto=format&fit=crop&w=750&q=80);background-size: cover; background-position:center;">
 
-  <div class="form-inputs">
-    <%= f.input :start_date%>
-    <%= f.input :end_date%>
-  </div>
+        <h2><%= @device.name %></h2>
+        <p><%= @device.description %></p>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
+    </div>
+
+    <div class="card about-section">
+      <div class="card-content">
+        <h3>Device</h3>
+        <p class="text-justify">Name: <%= @device.name %></p>
+        <p class="text-justify"> Description: <%= @device.description %></p>
+        <p class="text-justify">Brand: <%= @device.brand %></p>
+        <p class="text-justify">Model: <%= @device.model %></p>
+        <p class="text-justify">Category: <%= @device.category %></p>
+        <p class="text-justify"><strong>Price per Day: <%= @device.price %></strong></p>
+      </div>
+    </div>
+    <div class="card">
+      <%= simple_form_for [@device, @booking] do |f| %>
+      <%= f.error_notification %>
+      <div class="card-content">
+          <div class="form-inputs">
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>
+
