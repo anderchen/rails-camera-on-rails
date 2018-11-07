@@ -1,5 +1,7 @@
-<h1>All devices by user <%= current_user.email %></h1>
+<h1>All devices owned by <%= current_user.first_name %> <%= current_user.first_name %></h1>
 
 <% @devices.each do |device| %>
   <p><%= device.name %></p>
 <% end %>
+
+<%= link_to 'Add a New Device', new_device_path %>
