@@ -5,9 +5,9 @@ class DevicePolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    return true
-  end
+  # def index?
+  #   return true
+  # end
 
   def show?
     return true
@@ -18,7 +18,7 @@ class DevicePolicy < ApplicationPolicy
   end
 
   def edit?
-    return true
+    update?
   end
 
   def create?
@@ -26,10 +26,10 @@ class DevicePolicy < ApplicationPolicy
   end
 
   def update?
-    return true
+    record.user == user
   end
 
   def destroy?
-    return true
+    record.user == user
   end
 end

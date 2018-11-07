@@ -11,7 +11,7 @@ class DevicesController < ApplicationController
 
   def new
     @device = Device.new
-    authorize@device
+    authorize @device
   end
 
   def edit
@@ -25,7 +25,7 @@ class DevicesController < ApplicationController
     else
       render :new
     end
-    authorize@device
+    authorize @device
   end
 
   def update
@@ -45,7 +45,7 @@ class DevicesController < ApplicationController
 
   def set_device
     @device = Device.find(params[:id])
-    authorize@device
+    authorize @device
   end
 
   def device_params
