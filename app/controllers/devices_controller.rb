@@ -3,6 +3,7 @@ class DevicesController < ApplicationController
 
   def index
     @devices = Device.all
+    @devices = policy_scope(Device).order(created_at: :desc)
   end
 
   def show
@@ -10,6 +11,10 @@ class DevicesController < ApplicationController
 
   def new
     @device = Device.new
+    authorize @device
+  end
+
+  def edit
   end
 
   def create
@@ -20,9 +25,7 @@ class DevicesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
+    authorize @device
   end
 
   def update
@@ -42,6 +45,7 @@ class DevicesController < ApplicationController
 
   def set_device
     @device = Device.find(params[:id])
+    authorize @device
   end
 
   def device_params

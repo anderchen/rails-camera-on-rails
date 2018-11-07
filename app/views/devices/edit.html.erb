@@ -1,2 +1,19 @@
 <h1>Devices#edit</h1>
-<p>Find me in app/views/devices/edit.html.erb</p>
+<h1>Edit this Device</h1>
+
+<%= simple_form_for @device do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :brand %>
+    <%= f.input :model %>
+    <%= f.input :category %>
+    <%= f.input :price %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>
