@@ -1,2 +1,5 @@
-<h1>Devices#show</h1>
-<p>Find me in app/views/devices/show.html.erb</p>
+<h1><%= @device.name %></h1>
+
+<h3>Cost: <%= @device.price %> per day</h3>
+
+<%= link_to 'Rent this device!', new_device_booking_path(@device) %>
