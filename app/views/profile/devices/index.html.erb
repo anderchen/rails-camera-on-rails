@@ -1,37 +1,12 @@
 <h1>Your Devices</h1>
 
-<table class='table'>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <% @devices.each do |device| %>
+  <br>
+    <%= render "shared/card", device_category: device.category, device_name: device.name, device_description: device.description, device_path: device_path(device), edit_path: edit_device_path(device), device: device %>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @devices.each do |device| %>
-      <tr>
-        <td><%= device.name %></td>
-        <td><%= device.description %></td>
-        <td>
-          <%= link_to 'Show', device_path(device) %>
-        </td>
-        <td>
-          <% if policy(device).edit? %>
-          <%= link_to 'Edit', edit_device_path(device) %>
-          <% end %>
-        </td>
-        <td>
-          <% if policy(device).destroy? %>
-          <%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
 <%= link_to 'Add a New Device', new_device_path %>
