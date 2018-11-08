@@ -12,7 +12,12 @@
     <%#= stylesheet_link_tag "/app/assets/stylesheets/components/footer.scss" %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
+    <% if content_for? (:navbar) %>
+      <%= yield(:navbar) %>
+    <% else %>
+      <%= render 'shared/navbar_with_search' %>
+    <% end %>
+
     <%= render 'shared/flashes' %>
 
     <%= yield %>
