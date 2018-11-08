@@ -19,4 +19,17 @@ class Device < ApplicationRecord
       "http://res.cloudinary.com/sbutori/#{self.photo.file.identifier}"
     end
   end
+
+  include PgSearch
+  pg_search_scope :search_by_name_category_brand_model,
+    against:[
+      [:name, 'A'],
+      [:category,'B'],
+      [:brand,'C'],
+      [:model, 'D']
+    ],
+    using: {
+      tsearch: {prefix: true}
+    }
 end
+

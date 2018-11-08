@@ -1,13 +1,13 @@
 class DevicePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope
     end
   end
 
-  # def index?
-  #   return true
-  # end
+  def index?
+    return true
+  end
 
   def show?
     return true
