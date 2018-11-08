@@ -1,6 +1,5 @@
-<h1>Devices Available for Rental</h1>
-
 <div class="container">
+  <h1 class="text-center">Devices Available for Rental</h1>
   <div class="row">
   <% @devices.each do |device| %>
     <div class="col-xs-12 col-sm-4">
@@ -8,5 +7,6 @@
     </div>
   <% end %>
   </div>
+  <%= link_to 'Add a New Device', new_device_path %>
 </div>
 

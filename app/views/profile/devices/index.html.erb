@@ -1,12 +1,10 @@
-<h1>Your Devices</h1>
-
 <div class="container">
+  <h1>Your Devices</h1>
   <% @devices.each do |device| %>
-  <br>
     <%= render "shared/card", device_category: device.category, device_name: device.name, device_description: device.description, device_path: device_path(device), edit_path: edit_device_path(device), device: device %>
   <% end %>
+  <%= link_to 'Add a New Device', new_device_path %>
 </div>
 
 
 
-<%= link_to 'Add a New Device', new_device_path %>
