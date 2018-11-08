@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :devices, dependent: :destroy
   has_many :bookings, dependent: :restrict_with_error
+  has_many :bookings, through: :devices
 
   validates :first_name, presence: true
   validates :last_name, presence: true
