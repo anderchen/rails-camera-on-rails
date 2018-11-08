@@ -1,18 +1,3 @@
 <h1>Add a new Device for rental</h1>
 
-<%= simple_form_for @device do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :brand %>
-    <%= f.input :model %>
-    <%= f.input :category, collection: %w(Cameras Lens Tripods Drones Filters Lighting Accessories Other) %>
-    <%= f.input :price %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  </div>
-<% end %>
+<%= render 'form', device: @device %>

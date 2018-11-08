@@ -1,3 +1,17 @@
-<h1><%= @user.first_name %> <%= @user.last_name %>'s Personal Profile</h1>
+<% username= "#{@user.first_name} #{@user.last_name}" %>
 
-<h3>Cameras available for booking:</h3>
+<div class="container">
+  <div class="text-center">
+    <% if @user.avatar.file.nil? %>
+      <%= image_tag @user.profile_photo, width: 150, height: 150, id: 'avatar-profile' %>
+    <% else %>
+      <%= cl_image_tag @user.profile_photo, width: 150, height: 150, crop: :thumb, gravity: :face, id: 'avatar-profile' %>
+    <% end %>
+  <h1><%= username %>'s Personal Profile</h1>
+  <h4>Location: <%= @user.location %></h2>
+  </div>
+  <h3>Check below all devices from <%= username %> that are available for booking:</h3>
+  <% @user.devices.each do |device| %>
+    <%= render "shared/card", device_category: device.category, device_name: device.name, device_description: device.description, device_path: device_path(device), edit_path: edit_device_path(device), device: device %>
+  <% end %>
+</div>
