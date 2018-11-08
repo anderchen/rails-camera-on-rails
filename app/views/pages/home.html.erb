@@ -1,35 +1,16 @@
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
-<body>
   <section class="h-100" style="background-image: url(https://images.pexels.com/photos/122400/pexels-photo-122400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-position: center; background-size: cover;">
     <header class="container h-100" id="section1">
       <div class="d-flex align-items-center justify-content-center h-100">
         <div class="fixed" id="mainelement">
           <h1 class="text-center">I want to rent a <span id="banner-typed-text"></span></h1>
           <hr>
-
-
-
           <div class="input-group mb-3">
-
-
-
-<!--             <input type="text" class="form-control" placeholder="I would like to rent a..." aria-label="productrent" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">Rent!</button> -->
             <%= form_tag devices_path, method: :get do %>
               <%= text_field_tag :query,
               params[:query],
               class:"form-control",
               placeholder: "I would like to rent..." %>
-
             <% end %>
-
-
-
-
-
             </div>
           </div>
         </div>
@@ -81,7 +62,3 @@
      </div>
     </header>
   </section>
-</body>
-
-
-
