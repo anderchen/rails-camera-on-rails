@@ -8,10 +8,28 @@
         <div class="fixed" id="mainelement">
           <h1 class="text-center">I want to rent a <span id="banner-typed-text"></span></h1>
           <hr>
+
+
+
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="I would like to rent a..." aria-label="productrent" aria-describedby="basic-addon2">
+
+
+
+<!--             <input type="text" class="form-control" placeholder="I would like to rent a..." aria-label="productrent" aria-describedby="basic-addon2">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">Rent!</button>
+              <button class="btn btn-outline-secondary" type="button">Rent!</button> -->
+            <%= form_tag devices_path, method: :get do %>
+              <%= text_field_tag :query,
+              params[:query],
+              class:"form-control",
+              placeholder: "I would like to rent..." %>
+
+            <% end %>
+
+
+
+
+
             </div>
           </div>
         </div>
@@ -27,7 +45,7 @@
         <div class="col-sm-12 col-md-4">
           <div class="flip">
             <div class="front" style="background-image: url(https://images.pexels.com/photos/122400/pexels-photo-122400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-             <h1 class="text-shadow text-center">Cameras</hi>
+             <h1 class="text-shadow text-center">Cameras</h1>
              </div>
              <div class="back">
                <h2 class="text-center">Cameras</h2>
@@ -39,7 +57,7 @@
          <div class="col-sm-12 col-md-4">
           <div class="flip">
             <div class="front" style="background-image: url(https://images.pexels.com/photos/414781/pexels-photo-414781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); background-position: center; background-size: cover;">
-            <h1 class="text-shadow text-center">Lens</hi>
+            <h1 class="text-shadow text-center">Lens</h1>
             </div>
             <div class="back">
              <h2 class="text-center">Lens</h2>
@@ -51,7 +69,7 @@
        <div class="col-sm-12 col-md-4">
         <div class="flip">
           <div class="front" style="background-image: url(https://images.pexels.com/photos/1034812/pexels-photo-1034812.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
-           <h1 class="text-shadow text-center">Drone</hi>
+           <h1 class="text-shadow text-center">Drone</h1>
            </div>
            <div class="back">
              <h2 class="text-center">Drone</h2>
@@ -60,9 +78,10 @@
            </div>
          </div>
        </div>
-     </header>
-   </section>
- </body>
+     </div>
+    </header>
+  </section>
+</body>
 
 
 
