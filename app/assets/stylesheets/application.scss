@@ -14,5 +14,8 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
-@import "users/index"
+@import "users/index";
 
+@import "pickadate/default";
+@import "pickadate/default.date";
+@import "pickadate/default.time";
