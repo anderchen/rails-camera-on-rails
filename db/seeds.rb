@@ -8,7 +8,7 @@ puts "create 10 user seeds...."
     password: "123456",
     first_name: %w(Bob Maria John Ana Mark Jane).sample,
     last_name: Faker::Cannabis.strain,
-    location: %w("Rua Mourato Coelho, 1404", "Avenida Paulista, 1000", "Rua da Mooca, 436", "Avenida Brigadeiro Faria Lima, 500").sample,
+    location: %w("Rua Mourato Coelho, 1404", "Avenida Paulista, 1000", "Rua da Mooca, 436", "Avenida Brigadeiro Faria Lima, 500").sample
   )
   user.save!
 end

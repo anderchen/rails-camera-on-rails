@@ -15,7 +15,6 @@
               <li>Brand: <%= @device.brand %></li>
               <li>Model: <%= @device.model %></li>
               <li>Category: <%= @device.category %></li>
-              <li>Location: <%= @device.user.location %></li>
               <li>Price per Day: <%= @device.price %></li>
             </ul>
           </div>
@@ -29,8 +28,8 @@
         </div>
       </div>
         <div class="card-device", id="map"
-          style="width: 100%;
-          height: 600px;"
+          style="width: 50%;
+          height: 400px;"
           data-markers="<%= @markers.to_json %>">
         </div>
     </div>

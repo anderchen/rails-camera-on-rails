@@ -23,10 +23,10 @@ class DevicesController < ApplicationController
     # @device_location = @device.user.where.not(latitude: nil, longitude: nil)
 
     @markers =
-      {
+      [{
         lat: @device.user.latitude,
         lng: @device.user.longitude
-      }
+      }]
   end
 
   def new
