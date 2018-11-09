@@ -23,7 +23,7 @@ puts "10 user seeds complete!!!"
     model: ('A'..'Z').to_a.sample + rand(1..1000).to_s,
     category: %w(Cameras Lens Tripods Drones Filters Lighting Accessories Other).sample,
     price: 10,
-    user_id: rand(1..10)
+    user_id: rand(1..2)
     )
   device.save!
 end
