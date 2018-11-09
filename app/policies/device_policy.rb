@@ -32,4 +32,8 @@ class DevicePolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def new_booking?
+    record.user != user
+  end
 end
