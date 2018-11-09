@@ -1,9 +1,12 @@
-<h2>Sign up</h2>
+<body style="background-image: url(https://images.pexels.com/photos/614077/pexels-photo-614077.jpeg?cs=srgb&dl=analogue-aperture-black-and-white-614077.jpg&fm=jpg); background-position: center; background-size: cover;">
+<h2 class="text-center" style="color: white;">Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
+<div class="container">
+  <div class="row text-center justify-content-center">
+    <div class="col-lg-6 " style="background-color: white; border-radius: 25px; padding: 20px; opacity: 0.8px; box-shadow: 0px 0px 97px -10px rgba(171,171,171,0.67)">
+      <div class="form-inputs">
     <%= f.input :email,
                 required: true,
                 autofocus: true ,
@@ -23,9 +26,14 @@
     <%= f.input :avatar_cache, as: :hidden %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+  <div class="form-actions text-center">
+    <%= f.button :submit, "Sign up" , class: "btn btn-primary" %>
+    <hr>
+    <p style="margin-top: 30px;">Already have an account? <%= render "devise/shared/links" %></p>
   </div>
 <% end %>
+  </div>
+  </div>
+</div>
 
-<%= render "devise/shared/links" %>
+</body>
