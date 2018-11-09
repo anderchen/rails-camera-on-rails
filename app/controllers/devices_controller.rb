@@ -9,7 +9,7 @@ class DevicesController < ApplicationController
       brand ILIKE :query OR \
       model ILIKE :query \
       "
-      # raise
+
       @devices = Device.where(sql_query, query: "%#{params[:query]}%")
       @devices = policy_scope(@devices).order(created_at: :desc)
     else
@@ -19,6 +19,14 @@ class DevicesController < ApplicationController
   end
 
   def show
+
+    # @device_location = @device.user.where.not(latitude: nil, longitude: nil)
+
+    @markers =
+      {
+        lat: @device.user.latitude,
+        lng: @device.user.longitude
+      }
   end
 
   def new
