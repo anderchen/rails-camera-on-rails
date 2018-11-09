@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     else
       render :new
     end
-    authorize @booking
+    authorize @device, :new_booking?
   end
 
   private

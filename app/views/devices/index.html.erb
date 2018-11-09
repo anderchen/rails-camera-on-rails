@@ -1,14 +1,19 @@
-<div class="container">
-  <h1 class="text-center">Devices Available for Rental</h1>
-  <div class="text-center">
-    <%= link_to 'Add a New Device', new_device_path, class: 'btn btn-primary' %>
-  </div>
-  <div class="row">
-  <% @devices.each do |device| %>
-    <div class="col-xs-12 col-sm-4">
-      <%= render "shared/card", device_category: device.category, device_name: device.name, device_description: device.description, device_path: device_path(device), edit_path: edit_device_path(device), device: device %>
+<div class="containerdeviceindex">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-10 devicescard">
+        <h1 class="text-center">Devices Available for Rental</h1>
+        <div class="text-center">
+          <%= link_to 'Add a New Device', new_device_path, class: 'btn btn-primary' %>
+        </div>
+        <div class="row">
+          <% @devices.each do |device| %>
+          <div class="col-xs-12 col-sm-4 productcards">
+            <%= render "shared/card", device_category: device.category, device_name: device.name, device_description: device.description, device_path: device_path(device), edit_path: edit_device_path(device), device: device %>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
   </div>
 </div>
-
