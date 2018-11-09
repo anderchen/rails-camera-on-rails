@@ -1,61 +1,66 @@
-<div class="container">
-<h1>Your Bookings</h1>
+<div class="bookingcontainer">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-10 bookingcards">
+        <h1>Your Current Bookings</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Rented from</th>
+              <th>Device</th>
+              <th>Start Date</th>
+              <th>Return Date</th>
+              <th>Total Cost</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @bookings.each do |booking| %>
+            <tr>
+              <td><%= booking.device.user.first_name %> <%= booking.device.user.last_name %></td>
+              <td><%= booking.device.name %></td>
+              <td><%= booking.start_date %></td>
+              <td><%= booking.end_date %></td>
+              <td><%= booking.cost %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= link_to 'See all devices available for rent', devices_path, class: "btn btn-primary center-block" %>
+      </div>
+    </div>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-10 bookingcards">
+        <h1>Bookings For Your Owned Devices</h1>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Rented from</th>
-        <th>Device</th>
-        <th>Start Date</th>
-        <th>Return Date</th>
-        <th>Total Cost</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @bookings.each do |booking| %>
-        <tr>
-          <td><%= booking.device.user.first_name %> <%= booking.device.user.last_name %></td>
-          <td><%= booking.device.name %></td>
-          <td><%= booking.start_date %></td>
-          <td><%= booking.end_date %></td>
-          <td><%= booking.cost %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <%= link_to 'See all devices available for rent', devices_path %>
-
-  <h1>Bookings For Your Owned Devices</h1>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <!-- <th>Device Picture</th> -->
-        <th>Rented by</th>
-        <th>Device</th>
-        <th>Start Data</th>
-        <th>Return Date</th>
-        <th>Total Cost</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @owner_bookings.each do |device| %>
-      <% device.bookings.each do |booking| %>
-        <tr>
-          <!-- <td><%= cl_image_tag booking.device.default_photo, width: 200, height: 150, crop: :fill  %></td> -->
-          <td><%= booking.device.user.first_name %> <%= booking.device.user.last_name %></td>
-          <td><%= booking.device.name %></td>
-          <td><%= booking.start_date %></td>
-          <td><%= booking.end_date %></td>
-          <td><%= booking.cost %></td>
-        </tr>
-      <% end %>
-    <% end %>
-    </tbody>
-  </table>
-
+        <table class="table">
+          <thead>
+            <tr>
+              <!-- <th>Device Picture</th> -->
+              <th>Rented by</th>
+              <th>Device</th>
+              <th>Start Data</th>
+              <th>Return Date</th>
+              <th>Total Cost</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @owner_bookings.each do |device| %>
+            <% device.bookings.each do |booking| %>
+            <tr>
+              <!-- <td><%= cl_image_tag booking.device.default_photo, width: 200, height: 150, crop: :fill  %></td> -->
+              <td><%= booking.device.user.first_name %> <%= booking.device.user.last_name %></td>
+              <td><%= booking.device.name %></td>
+              <td><%= booking.start_date %></td>
+              <td><%= booking.end_date %></td>
+              <td><%= booking.cost %></td>
+            </tr>
+            <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
