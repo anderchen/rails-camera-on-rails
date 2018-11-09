@@ -28,6 +28,8 @@ gem 'pg_search'
 gem 'jquery'
 gem 'pickadate-rails'
 
+gem "geocoder"
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

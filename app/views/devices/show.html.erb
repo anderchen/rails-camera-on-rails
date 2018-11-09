@@ -1,32 +1,34 @@
-  <div class="container text-center padded">
-      <div class="grid-product-info">
-      <div class="card-device photo-section" style="background-image: url(<%= @device.default_photo %>); background-size: contain; background-repeat: no-repeat">
-        </div>
-        <div class="card-device">
-          <div class="card-content">
-            <h2><%= @device.name %></h2>
-            <br>
-            <p><%= @device.description %></p>
-          </div>
-        </div>
-        <div class="card-device">
-          <div class="card-content">
-            <ul class="flexbox-li" id="device-booking-description">
-              <li>Brand: <%= @device.brand %></li>
-              <li>Model: <%= @device.model %></li>
-              <li>Category: <%= @device.category %></li>
-              <li>Price per Day: <%= @device.price %></li>
-            </ul>
-      </div>
-        </div>
-        <div class="card-device">
-          <div class="card-content">
-            <% if policy(@device).new_booking? %>
-            <h2><%= link_to "Book NOW", new_device_booking_path(@device), class: "btn btn-danger btn-lg" %></h2>
-            <br>
-            <% end %>
-            <p><%= link_to "Back to search results", devices_path, class: "btn btn-info btn-sm"%></p>
-          </div>
-        </div>
+<div class="container text-center padded">
+  <div class="grid-product-info">
+    <div class="card-device photo-section" style="background-image: url(<%= @device.default_photo %>); background-size: contain; background-repeat: no-repeat">
+    </div>
+    <div class="card-device device-title">
+      <div class="card-content">
+        <h2><%= @device.name %></h2>
+        <br>
+        <p><%= @device.description %></p>
       </div>
     </div>
+    <div class="card-device device-info">
+      <div class="card-content ">
+        <ul class="flexbox-li" id="device-booking-description">
+          <li>Brand: <%= @device.brand %></li>
+          <li>Model: <%= @device.model %></li>
+          <li>Category: <%= @device.category %></li>
+          <li>Price per Day: <%= @device.price %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-device book-section">
+      <div class="card-content ">
+        <% if policy(@device).new_booking? %>
+        <h2><%= link_to "Book NOW", new_device_booking_path(@device), class: "btn btn-danger btn-lg" %></h2>
+        <br>
+        <% end %>
+        <p><%= link_to "Back to search results", devices_path, class: "btn btn-info btn-sm"%></p>
+      </div>
+    </div>
+    <div class="card-device map-section" id="map" style="width: 100%; height: 300px;" data-markers="<%= @markers.to_json %>" >
+    </div>
+  </div>
+</div>
