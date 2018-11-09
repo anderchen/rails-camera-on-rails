@@ -1,6 +1,6 @@
-<div class="container text-center padded">
+<div class="container text-center padded" style="min-height: calc(100vh - 218px);">
   <div class="grid-product-info">
-    <div class="card-device photo-section" style="background-image: url(<%= @device.default_photo %>); background-size: contain; background-repeat: no-repeat">
+    <div class="card-device photo-section" style="background-image: url(<%= @device.default_photo %>); background-size: contain; background-repeat: no-repeat" >
     </div>
     <div class="card-device device-title">
       <div class="card-content">
@@ -28,7 +28,7 @@
         <p><%= link_to "Back to search results", devices_path, class: "btn btn-info btn-sm"%></p>
       </div>
     </div>
-    <div class="card-device map-section" id="map" style="width: 100%; height: 300px;" data-markers="<%= @markers.to_json %>" >
+    <div class="card-device map-section" id="map" style="width: 98%; height: 200px;" data-markers="<%= @markers.to_json %>" >
     </div>
   </div>
 </div>

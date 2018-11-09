@@ -3,7 +3,7 @@
     <div class="col-lg-8 devicescard">
       <h1 class="text-center">Your Devices</h1>
   <% @devices.each do |device| %>
-    <%= render "shared/card", device_category: device.category, device_name: device.name, device_description: device.description, device_path: device_path(device), edit_path: edit_device_path(device), device: device %>
+    <%= render "shared/card", device_category: device.category, device_name: device.name, device_description: device.description, device_path: device_path(device), edit_path: edit_device_path(device), device: device%>
   <% end %>
   <%= link_to 'Add a New Device', new_device_path, class: "btn btn-primary  btn-block", style: "margin-top: 10px;"%>
     </div>
