@@ -14,6 +14,9 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :location, presence: true
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   def profile_photo
     if self.avatar.file.nil?
       'anon.jpg'

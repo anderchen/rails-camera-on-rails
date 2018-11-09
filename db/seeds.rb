@@ -6,7 +6,7 @@ puts "create 10 user seeds...."
   user = User.new(
     email: Faker::Internet.email,
     password: "123456",
-    first_name: Faker::Color.color_name,
+    first_name: %w(Bob Maria John Ana Mark Jane).sample,
     last_name: Faker::Cannabis.strain,
     location: Faker::Address.street_address
   )
