@@ -1,15 +1,15 @@
   <div class="container text-center padded">
       <div class="grid-product-info">
-        <div class="card photo-section" style="background-image: url(<%= @device.default_photo %>); background-size: cover;">
+        <div class="card-device photo-section" style="background-image: url(<%= @device.default_photo %>); background-size: cover;">
         </div>
-        <div class="card">
+        <div class="card-device">
           <div class="card-content">
             <h2><%= @device.name %></h2>
             <br>
             <p><%= @device.description %></p>
           </div>
         </div>
-        <div class="card">
+        <div class="card-device">
           <div class="card-content">
             <ul class="flexbox-li" style="list-style: none;">
               <li>Brand: <%= @device.brand %></li>
@@ -19,7 +19,7 @@
             </ul>
           </div>
         </div>
-        <div class="card">
+        <div class="card-device">
           <div class="card-content">
             <h2><%= link_to "Book NOW", new_device_booking_path(@device), class: "btn btn-danger btn-lg" %></h2>
             <br>

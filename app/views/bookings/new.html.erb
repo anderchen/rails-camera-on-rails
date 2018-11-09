@@ -1,9 +1,9 @@
 <div class="container text-center padded">
   <div class="grid">
-    <div class="card main-section" style="background-image: url(<%= @device.default_photo %>);background-size: cover; background-position:center;">
+    <div class="card-device main-section" style="background-image: url(<%= @device.default_photo %>);background-size: cover; background-position:center;">
     </div>
 
-    <div class="card about-section">
+    <div class="card-device about-section">
       <div class="card-content">
         <h3>Rent this device</h3>
         <p class="text-justify">Name: <%= @device.name %></p>
@@ -14,7 +14,7 @@
         <p class="text-justify"><strong>Price per Day: <%= @device.price %></strong></p>
       </div>
     </div>
-    <div class="card">
+    <div class="card-device">
       <%= simple_form_for [@device, @booking] do |f| %>
       <%= f.error_notification %>
       <div class="card-content">
