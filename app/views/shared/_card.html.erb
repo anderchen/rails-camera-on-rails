@@ -1,17 +1,20 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url(<%= cl_image_path device.default_photo, crop: :fit %>);">
+
+
   <div class="card-category"><%= device_category %></div>
+
   <div class="card-description">
     <h2><%= device_name %></h2>
     <p><%= device_description %></p>
   </div>
   <div class="links-owner">
     <% if policy( device ).edit? %>
-      <%= link_to 'Edit', edit_path %>
+      <%= link_to 'Edit', edit_path, class: 'card-edit-link' %>
     <% end %>
     <% if policy( device ).destroy? %>
-      <%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Delete', device,  class: 'card-destroy-link', method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-
-    <%= link_to "Show", device_path %>
   </div>
+  <%= link_to "Show", device_path, class: 'card-show-link' %>
 </div>

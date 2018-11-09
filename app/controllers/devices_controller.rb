@@ -2,8 +2,20 @@ class DevicesController < ApplicationController
   before_action :set_device, only: [:show, :edit, :update, :destroy]
 
   def index
-    @devices = Device.all
-    @devices = policy_scope(Device).order(created_at: :desc)
+    if params[:query].present?
+      sql_query = " \
+      name ILIKE :query OR \
+      category ILIKE :query OR \
+      brand ILIKE :query OR \
+      model ILIKE :query \
+      "
+      # raise
+      @devices = Device.where(sql_query, query: "%#{params[:query]}%")
+      @devices = policy_scope(@devices).order(created_at: :desc)
+    else
+      @devices = Device.all
+      @devices = policy_scope(@devices).order(created_at: :desc)
+    end
   end
 
   def show
@@ -41,6 +53,7 @@ class DevicesController < ApplicationController
     redirect_to devices_path
   end
 
+
   private
 
   def set_device
@@ -49,6 +62,6 @@ class DevicesController < ApplicationController
   end
 
   def device_params
-    params.require(:device).permit(:name, :description, :brand, :model, :category, :price, :is_rented, :owner_id)
+    params.require(:device).permit(:name, :description, :brand, :model, :category, :price, :is_rented, :owner_id, :photo)
   end
 end

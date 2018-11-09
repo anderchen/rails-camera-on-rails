@@ -6,9 +6,15 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
+    <div>
+      <%= form_tag devices_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class:"form-control",
+        placeholder: "I would like to rent..." %>
+      <% end %>
+    </div>
     <% if user_signed_in? %>
-
       <!-- Links when logged in -->
       <%= link_to "See all Available Devices", devices_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -41,7 +47,6 @@
         </div>
       </div>
     <% else %>
-
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
@@ -73,4 +78,3 @@
     </div>
   </div>
 </div>
-
