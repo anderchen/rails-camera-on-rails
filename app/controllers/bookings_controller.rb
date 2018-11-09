@@ -3,8 +3,8 @@ class BookingsController < ApplicationController
   before_action :set_device, only: [:new, :create]
 
   def index
-    @bookings = policy_scope(Booking).where(user_id: current_user.id).order(created_at: :desc)
-    @owner_bookings = policy_scope(Device).where(user_id: current_user.id).order(created_at: :desc)
+    @bookings = policy_scope(Booking).where(user_id: current_user.id).order(end_date: :desc)
+    @owner_bookings = policy_scope(Device).where(user_id: current_user.id).order(name: :asc)
   end
 
   def new
@@ -19,7 +19,6 @@ class BookingsController < ApplicationController
     start_date = @booking.start_date.to_date
     end_date = @booking.end_date.to_date
     @booking.cost = [1, ((end_date - start_date).to_i)].max * @device.price
-
     @booking.device = @device
 
     if @booking.save

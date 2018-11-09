@@ -10,10 +10,10 @@
   </div>
   <div class="links-owner">
     <% if policy( device ).edit? %>
-      <%= link_to 'Edit', edit_path, class: 'card-edit-link' %>
+      <%= link_to 'Edit', edit_path, class: 'card-destroy-link btn btn-success' %>
     <% end %>
     <% if policy( device ).destroy? %>
-      <%= link_to 'Delete', device,  class: 'card-destroy-link', method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Delete', device,  class: 'card-edit-link btn btn-info', method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
   </div>
   <%= link_to "Show", device_path, class: 'card-show-link' %>

@@ -1,6 +1,6 @@
   <div class="container text-center padded">
       <div class="grid-product-info">
-        <div class="card-device photo-section" style="background-image: url(<%= @device.default_photo %>); background-size: cover;">
+      <div class="card-device photo-section" style="background-image: url(<%= @device.default_photo %>); background-size: contain; background-repeat: no-repeat">
         </div>
         <div class="card-device">
           <div class="card-content">
@@ -11,18 +11,20 @@
         </div>
         <div class="card-device">
           <div class="card-content">
-            <ul class="flexbox-li" style="list-style: none;">
+            <ul class="flexbox-li" id="device-booking-description">
               <li>Brand: <%= @device.brand %></li>
               <li>Model: <%= @device.model %></li>
               <li>Category: <%= @device.category %></li>
               <li>Price per Day: <%= @device.price %></li>
             </ul>
-          </div>
+      </div>
         </div>
         <div class="card-device">
           <div class="card-content">
+            <% if policy(@device).new_booking? %>
             <h2><%= link_to "Book NOW", new_device_booking_path(@device), class: "btn btn-danger btn-lg" %></h2>
             <br>
+            <% end %>
             <p><%= link_to "Back to search results", devices_path, class: "btn btn-info btn-sm"%></p>
           </div>
         </div>
