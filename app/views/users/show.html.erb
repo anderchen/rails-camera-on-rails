@@ -1,7 +1,8 @@
 <% username= "#{@user.first_name} #{@user.last_name}" %>
-
-<div class="container">
-  <div class="text-center">
+<div class="containeruserprofile">
+  <div class="row justify-content-center">
+    <div class="col-md-11 col-lg-3 containercard">
+      <div class="text-center">
     <% if @user.avatar.file.nil? %>
       <%= image_tag @user.profile_photo, width: 150, height: 150, id: 'avatar-profile' %>
     <% else %>
@@ -10,8 +11,12 @@
   <h1><%= username %>'s Personal Profile</h1>
   <h4>Location: <%= @user.location %></h2>
   </div>
-  <h3>Check below all devices from <%= username %> that are available for booking:</h3>
+    </div>
+    <div class="col-md-12 col-lg-7 containercard">
+      <h4>Check below all devices from <%= username %> that are available for booking:</h4>
   <% @user.devices.each do |device| %>
     <%= render "shared/card", device_category: device.category, device_name: device.name, device_description: device.description, device_path: device_path(device), edit_path: edit_device_path(device), device: device %>
   <% end %>
+    </div>
+  </div>
 </div>
