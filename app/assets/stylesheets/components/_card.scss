@@ -22,7 +22,7 @@
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
+  bottom: 40px;
   left: 10px;
 }
 .card-description h2 {
@@ -48,19 +48,25 @@
 }
 .card-edit-link {
   z-index: 4;
+  flex: 0 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .card-destroy-link {
   z-index: 4;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .links-owner {
   position: absolute;
-  right: 10px;
-  bottom: 20px;
+  right: 0;
+  bottom: 5px;
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
+  word-wrap: normal;
+  width: 100%;
 }
 
 
